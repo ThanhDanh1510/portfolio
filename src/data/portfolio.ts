@@ -1,12 +1,17 @@
 export const personalInfo = {
   name: "Luu Thanh Danh",
   title: "AI Engineer",
-  roles: ["AI Engineer", "ML Researcher", "Deep Learning Engineer"],
+  roles: [
+    "AI Engineer",
+    "Machine Learning",
+    "Deep Learning",
+    "Multimodal AI",
+  ],
   email: "thanhdanh15102006@gmail.com",
   github: "https://github.com/ThanhDanh1510",
   orcid: "https://orcid.org/0009-0003-5632-6317",
   location: "Ho Chi Minh City, Vietnam",
-  bio: "AI Engineer & Data Scientist specializing in deep learning, computer vision, and multimodal retrieval systems. Currently pursuing BSc in Data Science at HCMUS.",
+  bio: "AI Engineer & Data Scientist specializing in deep learning, multimodal retrieval, and autonomous LLM agents. Currently pursuing BSc in Data Science at VNUHCM - University of Science.",
 };
 
 export type Project = {
@@ -25,35 +30,34 @@ export const projects: Project[] = [
     title: "Super Multimodal Video Retrieval Engine",
     subtitle: "AIC 2026",
     year: "2025 – Present",
-    tags: ["BEiT-3", "Qdrant", "Milvus", "Elasticsearch", "FastAPI", "Docker"],
+    tags: ["BEiT-3", "Qdrant", "Milvus", "Elasticsearch", "FastAPI", "Docker", "uv"],
     github:
       "https://github.com/ThanhDanh1510/Super-Image-Retrieval-System-for-AIC2026",
     highlight: "< 1.5s latency · 88,899 keyframes · 130+ video hours",
     description:
-      "Real-time multimodal search platform indexing 88,899+ video keyframes. Hybrid dense-sparse retrieval combining multi-branch vector search (Qdrant, Milvus) with BM25. Leveraged Gemini VLM + BEiT-3 for cross-modal alignment with DANTE temporal DP (TRAKE) for multi-step queries.",
+      "Real-time multimodal search platform indexing 88,899+ video keyframes (130+ video hours) for Known-Item Search, Visual QA, and temporal event sequence retrieval. Hybrid dense-sparse retrieval combining multi-branch vector search (Qdrant, Milvus, GPU matmul) with BM25. Integrated Gemini VLM + BEiT-3 embeddings, DANTE temporal DP (TRAKE), and Dual Rerankers (ViRanker + Jina via RRF).",
     color: "cyan",
+  },
+  {
+    title: "Autonomous Voice-to-Action AI Agent",
+    subtitle: "LifeMate · Zalo AI 2026",
+    year: "2026",
+    tags: ["vLLM", "LoRA Soup", "ONNX Runtime", "Qwen3.5", "ASR", "FastAPI", "Docker"],
+    github: "https://github.com/ThanhDanh1510/ZaloAI2026",
+    highlight: "0 MB VRAM ASR · LoRA Soup (r=160) · 0% error rate (625 cases)",
+    description:
+      "End-to-end offline Voice-to-Action agent translating multi-turn Vietnamese speech into tool executions across 20+ apps and 60+ APIs under a strict 6B parameter ceiling. Zero-GPU-overhead ASR serving Gipformer 1.5 via ONNX Runtime on CPU (~200ms latency), dedicating 100% GPU to LLM KV-cache. Fine-tuned Qwen3.5-4B via LoRA Soup across 5 domain adapters with 4-tier guardrails and vLLM prefix caching.",
+    color: "purple",
   },
   {
     title: "Deep Residual Vision Pipeline",
     subtitle: "Olympic AI HCMC 2025",
     year: "2025",
-    tags: ["PyTorch", "CUDA", "ResNet", "CNN", "Label Smoothing"],
+    tags: ["PyTorch", "CUDA", "Residual Networks", "CNN", "Optimization"],
     github: "https://github.com/ThanhDanh1510/OLP-AI-HCMC-2025",
-    highlight: "Custom skip connections · Kaiming init · Label smoothing 0.05",
+    highlight: "Custom ResNet · Kaiming init · Label smoothing 0.05",
     description:
-      "Deep learning image classification system in PyTorch (CUDA). Custom deep ConvNets with residual skip connections, batch normalization, and LeakyReLU. Applied Kaiming Normal initialization and label smoothing for boosted generalization.",
-    color: "purple",
-  },
-  {
-    title: "Auto-Doodle-Insta",
-    subtitle: "CV & Trajectory Optimization Engine",
-    year: "2024 – 2025",
-    tags: ["OpenCV", "K-Means", "TSP", "Win32 API", "CIE-Lab"],
-    github: "https://github.com/ThanhDanh1510/Auto-Doodle-Insta",
-    highlight:
-      "70–90% stroke compression · 65% travel latency cut · 10–50x speedup",
-    description:
-      "High-performance computer vision system converting raster images into optimized vector strokes. CIE-Lab Delta-E perceptual color matching with K-Means clustering, RDP contour simplification, and Greedy TSP path optimizer. Direct Win32 APIs for 10–50x speedup.",
+      "Deep learning image classification system in PyTorch (CUDA) for the Olympic AI HCMC 2025 competition. Designed custom deep convolutional networks with residual skip connections, batch normalization, and LeakyReLU activations. Applied Kaiming Normal initialization and label smoothing to accelerate gradient flow and avoid representation collapse.",
     color: "green",
   },
 ];
@@ -75,7 +79,7 @@ export const publications: Publication[] = [
     year: "2026",
     doi: "https://doi.org/10.1007/978-981-92-2584-2_8",
     description:
-      "Formulated joint cross-modal semantic matching and temporal sequence alignment to accurately locate complex multi-step events across extensive video archives.",
+      "Formulated joint cross-modal semantic matching and temporal sequence alignment to accurately locate complex multi-step events and actions across extensive video archives.",
   },
   {
     title:
@@ -84,7 +88,7 @@ export const publications: Publication[] = [
     year: "2026",
     arxiv: "https://arxiv.org/abs/2608.09493",
     description:
-      "Training-free hybrid inference framework with view-conditioned routing and depth-layered rendering to stabilize static geometry and temporal coherence in traffic video diffusion models.",
+      "Engineered a training-free hybrid inference framework with view-conditioned routing and depth-layered rendering to stabilize static geometry and temporal coherence in traffic video diffusion models.",
   },
 ];
 
@@ -103,10 +107,11 @@ export const skillPillars: SkillPillar[] = [
     skills: [
       "PyTorch",
       "Transformers",
+      "LLMs (Qwen)",
+      "LoRA / PEFT",
+      "ASR",
+      "Multimodal (BEiT-3)",
       "CNNs",
-      "BEiT-3",
-      "PINNs",
-      "Mamba",
       "Scikit-Learn",
     ],
   },
@@ -120,7 +125,7 @@ export const skillPillars: SkillPillar[] = [
       "Hybrid Retrieval",
       "Dense + BM25",
       "Feature Engineering",
-      "RDP Simplification",
+      "Function Calling",
     ],
   },
   {
@@ -129,14 +134,16 @@ export const skillPillars: SkillPillar[] = [
     color: "green",
     skills: [
       "Docker",
+      "Docker Compose",
+      "vLLM",
+      "ONNX Runtime",
       "FastAPI",
       "Pydantic",
       "Milvus",
       "Qdrant",
       "Elasticsearch",
-      "MLflow",
-      "DVC",
       "uv",
+      "Git",
     ],
   },
   {
@@ -148,6 +155,7 @@ export const skillPillars: SkillPillar[] = [
       "C/C++",
       "SQL",
       "TypeScript",
+      "Bash Scripting",
       "NumPy",
       "Pandas",
       "DuckDB",
@@ -159,23 +167,23 @@ export const skillPillars: SkillPillar[] = [
 
 export const achievements = [
   {
-    title: "HCMC AI Challenge (AIC 2025 & 2026)",
+    title: "HCMC AI Challenge (AIC 2024 & 2025)",
     description:
-      "Engineered real-time multimodal video retrieval platforms using hybrid dense-sparse search and multi-branch Qdrant vector architectures with dual rerankers (ViRanker + Jina via RRF).",
+      "Awarded Potential Prize (2025) and Third Prize (2024) for developing real-time multimodal video retrieval and keyframe search systems indexing 88,899+ frames.",
+  },
+  {
+    title: "Zalo AI Challenge 2026",
+    description:
+      "Built an autonomous offline Voice-to-Action agent (LifeMate) featuring zero-GPU-overhead ASR via ONNX Runtime and LoRA Soup fine-tuning with 0% error rate across 625 test cases.",
   },
   {
     title: "Olympic AI HCMC 2025",
     description:
-      "Engineered deep residual CNN pipelines for competitive image recognition with custom architectures and advanced initialization strategies.",
+      "Engineered deep residual CNN pipelines with skip connections, batch normalization, and Kaiming initialization for competitive multi-class image recognition.",
   },
   {
-    title: "Machine Learning Foundations from Scratch (TensorTonic)",
+    title: "AI Olympiad Mentorship",
     description:
-      "Implemented core ML/DL primitives from first principles without high-level libraries: Adam, RMSprop, Transformer Positional Encoding, Decision Tree Entropy, IoU metrics.",
-  },
-  {
-    title: "Academic Open-Source",
-    description:
-      "Authored curated open-source repositories for Data Structures & Algorithms (HCMUS DSA) and Statistical Theory reference materials.",
+      "Mentored high school student qualifying for the Vietnam National Team selection round for the International AI Olympiad (IAIO).",
   },
 ];

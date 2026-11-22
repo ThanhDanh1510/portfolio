@@ -240,8 +240,8 @@ export default function HeroSection() {
                   </div>
 
                   {/* Highlights List */}
-                  <div className="mt-4 space-y-3 font-mono text-xs">
-                    <div className="rounded-xl border border-white/10 bg-white/5 p-3">
+                  <div className="mt-3 space-y-2.5 font-mono text-xs">
+                    <div className="rounded-xl border border-white/10 bg-white/5 p-2.5">
                       <p className="flex items-center gap-1.5 font-bold text-cyan-300">
                         <BookOpen size={13} /> Publications (2026)
                       </p>
@@ -252,19 +252,21 @@ export default function HeroSection() {
                       </p>
                     </div>
 
-                    <div className="rounded-xl border border-white/10 bg-white/5 p-3">
+                    <div className="rounded-xl border border-white/10 bg-white/5 p-2.5">
                       <p className="flex items-center gap-1.5 font-bold text-purple-300">
-                        <Cpu size={13} /> AIC 2026 Multimodal
+                        <Cpu size={13} /> Featured AI Systems
                       </p>
                       <p className="mt-1 text-[11px] text-gray-400">
-                        88,899+ Keyframes · Qdrant &amp; Milvus · &lt;1.5s latency
+                        • AIC 2026: Multimodal Video Retrieval (&lt;1.5s)
+                        <br />
+                        • Zalo AI: Voice-to-Action (0 MB VRAM ASR)
                       </p>
                     </div>
                   </div>
 
                   {/* Skills tags */}
-                  <div className="mt-3 flex flex-wrap gap-1.5">
-                    {["PyTorch", "Transformers", "BEiT-3", "CUDA", "FastAPI"].map(t => (
+                  <div className="mt-2.5 flex flex-wrap gap-1.5">
+                    {["PyTorch", "vLLM", "LoRA Soup", "BEiT-3", "Qdrant", "Docker"].map(t => (
                       <span key={t} className="rounded-md border border-cyan-500/20 bg-cyan-500/5 px-2 py-0.5 text-[10px] text-cyan-300 font-mono">
                         {t}
                       </span>

@@ -36,9 +36,9 @@ export default function AboutSection() {
               variants={fadeInUp}
               className="text-base leading-relaxed text-slate-600 dark:text-gray-400"
             >
-              I&apos;m a first-year BSc Data Science student at{" "}
-              <span className="font-semibold text-slate-900 dark:text-white">VNUHCM - HCMUS</span>, specializing in
-              deep learning, computer vision, and multimodal AI systems. I build
+              I&apos;m a BSc Data Science student at{" "}
+              <span className="font-semibold text-slate-900 dark:text-white">VNUHCM - University of Science</span>, specializing in
+              deep learning, multimodal retrieval, and autonomous LLM agents. I build
               production-grade ML pipelines and have published research at Springer
               and ECCV.
             </motion.p>
@@ -47,9 +47,8 @@ export default function AboutSection() {
               variants={fadeInUp}
               className="text-base leading-relaxed text-slate-600 dark:text-gray-400"
             >
-              My work spans from real-time video retrieval engines processing
-              130+ hours of video, to trajectory optimization systems with 10–50x
-              speedup via direct Win32 APIs. I care deeply about both the{" "}
+              My work spans from real-time multimodal video retrieval engines indexing
+              88,899+ keyframes with sub-1.5s latency, to autonomous offline Voice-to-Action agents with zero-GPU-overhead ASR and LoRA Soup fine-tuning. I care deeply about both the{" "}
               <span className="font-medium text-cyan-600 dark:text-cyan-400">mathematical foundations</span> and
               the <span className="font-medium text-purple-600 dark:text-purple-400">engineering craft</span> behind AI systems.
             </motion.p>
@@ -79,7 +78,7 @@ export default function AboutSection() {
                 </span>
               </div>
               <div className="mt-4 flex flex-wrap gap-2">
-                {["Linear Algebra", "ML Theory", "Deep Learning", "Optimization", "Statistics"].map(
+                {["Data Structures & Algorithms", "Linear Algebra", "Probability & Statistics", "Optimization", "C/C++", "Deep Learning"].map(
                   (c) => (
                     <span
                       key={c}
