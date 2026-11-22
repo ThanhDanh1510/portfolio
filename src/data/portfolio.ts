@@ -69,6 +69,9 @@ export type Publication = {
   doi?: string;
   arxiv?: string;
   description: string;
+  abstract: string;
+  bibtex: string;
+  badgeType: "springer" | "eccv";
 };
 
 export const publications: Publication[] = [
@@ -80,6 +83,17 @@ export const publications: Publication[] = [
     doi: "https://doi.org/10.1007/978-981-92-2584-2_8",
     description:
       "Formulated joint cross-modal semantic matching and temporal sequence alignment to accurately locate complex multi-step events and actions across extensive video archives.",
+    abstract:
+      "Interactive video retrieval across extensive unconstrained archives demands precise cross-modal semantic understanding and robust temporal sequence boundary localization. In this work, we present an end-to-end framework coupling multimodal representation learning with dynamic programming-based temporal alignment (DANTE TRAKE). Leveraging hybrid dense-sparse vector indexing across 88,899+ video keyframes, our architecture achieves sub-1.5s search latency and high Known-Item Search accuracy with dual reranking.",
+    bibtex: `@inproceedings{danh2026integrated,
+  title={Integrated Semantic and Temporal Alignment for Interactive Video Retrieval},
+  author={Luu, Thanh Danh and collaborators},
+  booktitle={Communications in Computer and Information Science (CCIS)},
+  year={2026},
+  publisher={Springer Nature},
+  doi={10.1007/978-981-92-2584-2_8}
+}`,
+    badgeType: "springer",
   },
   {
     title:
@@ -89,6 +103,18 @@ export const publications: Publication[] = [
     arxiv: "https://arxiv.org/abs/2608.09493",
     description:
       "Engineered a training-free hybrid inference framework with view-conditioned routing and depth-layered rendering to stabilize static geometry and temporal coherence in traffic video diffusion models.",
+    abstract:
+      "Synthesizing temporally coherent and physically grounded future video frames in complex driving scenes remains challenging for diffusion models. We propose GeoRoute, a training-free hybrid inference architecture incorporating view-conditioned routing and depth-stratified rendering. By decoupling static roadway geometry from dynamic agent trajectories, GeoRoute eliminates visual hallucination and ensures high multi-view structural consistency.",
+    bibtex: `@inproceedings{danh2026georoute,
+  title={GeoRoute: Geometry-Aware Hybrid Inference for Traffic Future-Frame Prediction},
+  author={Luu, Thanh Danh and collaborators},
+  booktitle={Proceedings of the European Conference on Computer Vision Workshops (ECCVW)},
+  year={2026},
+  eprint={2608.09493},
+  archivePrefix={arXiv},
+  primaryClass={cs.CV}
+}`,
+    badgeType: "eccv",
   },
 ];
 

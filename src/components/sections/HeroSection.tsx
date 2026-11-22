@@ -1,12 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowDown, Mail, ExternalLink, Sparkles, RotateCcw, BookOpen, Cpu } from "lucide-react";
+import { ArrowDown, Mail, ExternalLink, Sparkles, RotateCcw, BookOpen, Cpu, Clock } from "lucide-react";
 import { GitHubIcon } from "@/components/icons/GitHubIcon";
 import { personalInfo } from "@/data/portfolio";
 import { fadeInUp, staggerContainer } from "@/lib/animations";
 import { useEffect, useState } from "react";
-import { cn } from "@/lib/utils";
 import FlipCard from "@/components/FlipCard";
 
 const ROLES = personalInfo.roles;
@@ -15,6 +14,25 @@ export default function HeroSection() {
   const [roleIndex, setRoleIndex] = useState(0);
   const [displayed, setDisplayed] = useState("");
   const [typing, setTyping] = useState(true);
+  const [hcmTime, setHcmTime] = useState<string>("");
+
+  // Live Ho Chi Minh City (+07:00) Clock
+  useEffect(() => {
+    const updateTime = () => {
+      const now = new Date();
+      const formatted = new Intl.DateTimeFormat("en-US", {
+        timeZone: "Asia/Ho_Chi_Minh",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        hour12: false,
+      }).format(now);
+      setHcmTime(formatted);
+    };
+    updateTime();
+    const timer = setInterval(updateTime, 1000);
+    return () => clearInterval(timer);
+  }, []);
 
   // Typing animation
   useEffect(() => {
@@ -33,8 +51,11 @@ export default function HeroSection() {
         const t = setTimeout(() => setDisplayed(displayed.slice(0, -1)), 35);
         return () => clearTimeout(t);
       } else {
-        setRoleIndex((i) => (i + 1) % ROLES.length);
-        setTyping(true);
+        const t = setTimeout(() => {
+          setRoleIndex((i) => (i + 1) % ROLES.length);
+          setTyping(true);
+        }, 300);
+        return () => clearTimeout(t);
       }
     }
   }, [displayed, typing, roleIndex]);
@@ -47,15 +68,15 @@ export default function HeroSection() {
     <section className="relative flex min-h-[100dvh] w-full items-center overflow-hidden px-6 py-20">
       {/* Animated background orbs */}
       <div className="pointer-events-none absolute inset-0 z-0">
-        <div className="absolute left-1/4 top-1/4 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-500/8 blur-[120px]" />
-        <div className="absolute right-1/4 top-2/3 h-[400px] w-[400px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-purple-500/8 blur-[120px]" />
-        {/* Grid lines */}
+        <div className="absolute left-1/4 top-1/4 h-[520px] w-[520px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-500/10 blur-[130px]" />
+        <div className="absolute right-1/4 top-2/3 h-[420px] w-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-purple-500/10 blur-[130px]" />
+        {/* Subtle Cyber Grid */}
         <div
-          className="absolute inset-0 opacity-[0.03]"
+          className="absolute inset-0 opacity-[0.035]"
           style={{
             backgroundImage:
               "linear-gradient(rgba(6,182,212,1) 1px, transparent 1px), linear-gradient(90deg, rgba(6,182,212,1) 1px, transparent 1px)",
-            backgroundSize: "60px 60px",
+            backgroundSize: "55px 55px",
           }}
         />
       </div>
@@ -68,59 +89,77 @@ export default function HeroSection() {
           animate="visible"
           className="flex flex-col gap-6"
         >
-          <motion.div variants={fadeInUp}>
-            <span className="inline-flex items-center gap-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 dark:border-cyan-400/20 dark:bg-cyan-400/5 px-4 py-1.5 font-mono text-xs text-cyan-700 dark:text-cyan-400">
-              <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-cyan-500 dark:bg-cyan-400" />
-              Available for opportunities
+          {/* Status Badges with Live HCM Clock */}
+          <motion.div variants={fadeInUp} className="flex flex-wrap items-center gap-2.5">
+            <span className="inline-flex items-center gap-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 dark:border-cyan-400/20 dark:bg-cyan-400/5 px-3.5 py-1.5 font-mono text-xs text-cyan-700 dark:text-cyan-300">
+              <span className="h-2 w-2 animate-ping rounded-full bg-emerald-400" />
+              Available for AI / ML Roles
+            </span>
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-200/90 bg-slate-100/80 dark:border-white/10 dark:bg-white/5 px-3 py-1.5 font-mono text-xs text-slate-600 dark:text-gray-400">
+              <Clock size={12} className="text-cyan-500" />
+              <span>HCM (UTC+7):</span>
+              <span
+                suppressHydrationWarning
+                className="font-semibold text-slate-800 dark:text-cyan-300 font-mono"
+              >
+                {hcmTime || "--:--:--"}
+              </span>
             </span>
           </motion.div>
 
+          {/* Upgraded Gradient Typography */}
           <motion.h1
             variants={fadeInUp}
-            className="text-5xl font-black tracking-tight text-slate-900 dark:text-white md:text-6xl lg:text-7xl"
+            className="text-5xl font-black tracking-tight md:text-6xl lg:text-7xl"
           >
-            {personalInfo.name.split(" ").map((word, i) => (
-              <span
-                key={i}
-                className={cn(
-                  "block",
-                  i === personalInfo.name.split(" ").length - 1 &&
-                    "text-transparent [-webkit-text-stroke:1px_rgba(6,182,212,0.8)] dark:[-webkit-text-stroke:1px_rgba(6,182,212,0.6)]"
-                )}
-              >
-                {word}
-              </span>
-            ))}
+            <span className="block bg-gradient-to-r from-slate-950 via-slate-800 to-cyan-700 bg-clip-text text-transparent dark:from-white dark:via-cyan-100 dark:to-cyan-400 drop-shadow-sm">
+              Luu Thanh
+            </span>
+            <span className="block bg-gradient-to-r from-cyan-600 via-teal-600 to-cyan-500 bg-clip-text text-transparent dark:from-cyan-400 dark:via-cyan-300 dark:to-teal-300 dark:drop-shadow-[0_0_30px_rgba(6,182,212,0.4)]">
+              Danh
+            </span>
           </motion.h1>
 
+          {/* Typing Role Banner */}
           <motion.div variants={fadeInUp} className="h-10">
-            <p className="font-mono text-xl text-cyan-600 dark:text-cyan-400 md:text-2xl">
+            <p className="font-mono text-xl text-cyan-600 dark:text-cyan-400 md:text-2xl font-bold">
               {displayed}
-              <span className="animate-[blink_1s_step-end_infinite] text-cyan-500 dark:text-cyan-300">|</span>
+              <span className="animate-[blink_1s_step-end_infinite] text-cyan-500 dark:text-cyan-300 font-normal">
+                |
+              </span>
             </p>
           </motion.div>
 
           <motion.p
             variants={fadeInUp}
-            className="max-w-md text-base leading-relaxed text-slate-600 dark:text-gray-400"
+            className="max-w-md text-base leading-relaxed text-slate-600 dark:text-gray-300"
           >
             {personalInfo.bio}
           </motion.p>
 
-          {/* CTA Buttons */}
-          <motion.div variants={fadeInUp} className="flex flex-wrap gap-4">
+          {/* Shimmering CTA Buttons */}
+          <motion.div variants={fadeInUp} className="flex flex-wrap gap-4 pt-1">
             <button
-              onClick={() => document.querySelector("#projects")?.scrollIntoView({ behavior: "smooth" })}
-              className="group relative overflow-hidden rounded-full border border-cyan-500/40 bg-cyan-500/10 dark:border-cyan-400/30 dark:bg-cyan-400/10 px-7 py-3 font-mono text-sm text-cyan-700 dark:text-cyan-300 transition-all hover:border-cyan-500 hover:bg-cyan-500/20 dark:hover:border-cyan-400/60 dark:hover:bg-cyan-400/20 hover:shadow-[0_0_24px_rgba(6,182,212,0.25)]"
+              onClick={() =>
+                document.querySelector("#projects")?.scrollIntoView({ behavior: "smooth" })
+              }
+              className="group relative overflow-hidden rounded-full border border-cyan-500/50 bg-gradient-to-r from-cyan-500/15 via-cyan-500/25 to-cyan-500/15 dark:border-cyan-400/40 dark:from-cyan-400/10 dark:to-cyan-400/20 px-7 py-3 font-mono text-sm text-cyan-800 dark:text-cyan-300 transition-all hover:border-cyan-500 hover:shadow-[0_0_30px_rgba(6,182,212,0.35)] active:scale-95"
             >
-              View Projects
+              {/* Shimmering beam across button */}
+              <span className="pointer-events-none absolute inset-0 -translate-x-full animate-shimmer bg-gradient-to-r from-transparent via-white/35 dark:via-white/20 to-transparent" />
+              <span className="relative z-10 flex items-center gap-2 font-bold">
+                View Projects <Sparkles size={14} className="text-cyan-500 animate-pulse" />
+              </span>
             </button>
             <a
               href="/cv.pdf"
               download
-              className="flex items-center gap-2 rounded-full border border-slate-200 bg-slate-100 text-slate-700 dark:border-white/10 dark:bg-white/5 dark:text-gray-300 px-7 py-3 font-mono text-sm transition-all hover:border-slate-300 hover:bg-slate-200/80 dark:hover:border-white/20 dark:hover:bg-white/10"
+              className="group flex items-center gap-2 rounded-full border border-slate-200 bg-slate-100 text-slate-800 dark:border-white/10 dark:bg-white/5 dark:text-gray-300 px-7 py-3 font-mono text-sm font-semibold transition-all hover:border-cyan-500/50 hover:bg-slate-200/80 dark:hover:border-cyan-400/30 dark:hover:bg-white/10 active:scale-95 shadow-xs"
             >
-              <ArrowDown size={14} />
+              <ArrowDown
+                size={14}
+                className="transition-transform group-hover:translate-y-0.5 text-cyan-600 dark:text-cyan-400"
+              />
               Download CV
             </a>
           </motion.div>
@@ -129,7 +168,7 @@ export default function HeroSection() {
           <motion.div variants={fadeInUp} className="flex items-center gap-4">
             <a
               href={`mailto:${personalInfo.email}`}
-              className="flex items-center gap-2 font-mono text-xs text-slate-500 dark:text-gray-500 transition-colors hover:text-cyan-600 dark:hover:text-cyan-400"
+              className="flex items-center gap-2 font-mono text-xs text-slate-600 dark:text-gray-400 transition-colors hover:text-cyan-600 dark:hover:text-cyan-400"
             >
               <Mail size={14} />
               {personalInfo.email}
@@ -139,7 +178,7 @@ export default function HeroSection() {
               href={personalInfo.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 font-mono text-xs text-slate-500 dark:text-gray-500 transition-colors hover:text-cyan-600 dark:hover:text-cyan-400"
+              className="flex items-center gap-1.5 font-mono text-xs text-slate-600 dark:text-gray-400 transition-colors hover:text-cyan-600 dark:hover:text-cyan-400"
             >
               <GitHubIcon size={14} />
               GitHub
@@ -149,7 +188,7 @@ export default function HeroSection() {
               href={personalInfo.orcid}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 font-mono text-xs text-slate-500 dark:text-gray-500 transition-colors hover:text-cyan-600 dark:hover:text-cyan-400"
+              className="flex items-center gap-1.5 font-mono text-xs text-slate-600 dark:text-gray-400 transition-colors hover:text-cyan-600 dark:hover:text-cyan-400"
             >
               <ExternalLink size={14} />
               ORCID
@@ -217,7 +256,12 @@ export default function HeroSection() {
                   <div className="mt-2 flex items-center justify-between border-t border-white/10 pt-2 text-[11px] font-mono text-gray-400">
                     <span>3rd Year · Exp. 2028</span>
                     <span className="flex items-center gap-1 text-cyan-300">
-                      <RotateCcw size={10} className="animate-spin" style={{ animationDuration: '6s' }} /> Click or drag to flip
+                      <RotateCcw
+                        size={10}
+                        className="animate-spin"
+                        style={{ animationDuration: "6s" }}
+                      />{" "}
+                      Click or drag to flip
                     </span>
                   </div>
                 </div>
@@ -266,8 +310,11 @@ export default function HeroSection() {
 
                   {/* Skills tags */}
                   <div className="mt-2.5 flex flex-wrap gap-1.5">
-                    {["PyTorch", "vLLM", "LoRA Soup", "BEiT-3", "Qdrant", "Docker"].map(t => (
-                      <span key={t} className="rounded-md border border-cyan-500/20 bg-cyan-500/5 px-2 py-0.5 text-[10px] text-cyan-300 font-mono">
+                    {["PyTorch", "vLLM", "LoRA Soup", "BEiT-3", "Qdrant", "Docker"].map((t) => (
+                      <span
+                        key={t}
+                        className="rounded-md border border-cyan-500/20 bg-cyan-500/5 px-2 py-0.5 text-[10px] text-cyan-300 font-mono"
+                      >
                         {t}
                       </span>
                     ))}

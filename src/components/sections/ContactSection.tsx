@@ -55,7 +55,7 @@ export default function ContactSection() {
         >
           <motion.div variants={fadeInUp} className="mb-4">
             <p className="font-mono text-xs uppercase tracking-widest text-cyan-600 dark:text-cyan-400">
-              // Get In Touch
+              {"// Get In Touch"}
             </p>
           </motion.div>
 

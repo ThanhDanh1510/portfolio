@@ -34,7 +34,7 @@ export default function BlogPage() {
 
         <div className="mb-12">
           <p className="mb-3 font-mono text-xs uppercase tracking-widest text-cyan-600 dark:text-cyan-400">
-            // Writing
+            {"// Writing"}
           </p>
           <h1 className="text-4xl font-black text-slate-900 dark:text-white md:text-5xl">Blog</h1>
           <p className="mt-4 text-slate-600 dark:text-gray-400">
