@@ -36,7 +36,7 @@ export default function AboutSection() {
               variants={fadeInUp}
               className="text-base leading-relaxed text-slate-600 dark:text-gray-400"
             >
-              I&apos;m a BSc Data Science student at{" "}
+              I&apos;m a third-year BSc Data Science student at{" "}
               <span className="font-semibold text-slate-900 dark:text-white">VNUHCM - University of Science</span>, specializing in
               deep learning, multimodal retrieval, and autonomous LLM agents. I build
               production-grade ML pipelines and have published research at Springer
@@ -64,7 +64,7 @@ export default function AboutSection() {
                 </div>
                 <div>
                   <p className="font-semibold text-slate-900 dark:text-white">VNUHCM - University of Science</p>
-                  <p className="font-mono text-xs text-cyan-600 dark:text-cyan-400">BSc in Data Science</p>
+                  <p className="font-mono text-xs text-cyan-600 dark:text-cyan-400">BSc in Data Science · 3rd-Year Student</p>
                 </div>
               </div>
               <div className="flex flex-wrap gap-4 text-sm text-slate-500 dark:text-gray-400">
@@ -74,7 +74,7 @@ export default function AboutSection() {
                 </span>
                 <span className="flex items-center gap-1.5">
                   <Calendar size={13} className="text-slate-400 dark:text-gray-600" />
-                  Sep 2024 – 2028 (Expected)
+                  Sep 2024 – 2028 (Exp.) · Junior
                 </span>
               </div>
               <div className="mt-4 flex flex-wrap gap-2">

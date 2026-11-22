@@ -11,7 +11,7 @@ export const personalInfo = {
   github: "https://github.com/ThanhDanh1510",
   orcid: "https://orcid.org/0009-0003-5632-6317",
   location: "Ho Chi Minh City, Vietnam",
-  bio: "AI Engineer & Data Scientist specializing in deep learning, multimodal retrieval, and autonomous LLM agents. Currently pursuing BSc in Data Science at VNUHCM - University of Science.",
+  bio: "AI Engineer & Data Scientist specializing in deep learning, multimodal retrieval, and autonomous LLM agents. Third-year Data Science student at VNUHCM - University of Science.",
 };
 
 export type Project = {

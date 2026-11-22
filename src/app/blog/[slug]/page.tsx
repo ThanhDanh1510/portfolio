@@ -49,7 +49,7 @@ The full system is open-source on [GitHub](https://github.com/ThanhDanh1510/Supe
     content: `
 ## Who Am I?
 
-Hi! I'm **Luu Thanh Danh**, a first-year BSc Data Science student at VNUHCM - University of Science (HCMUS) in Ho Chi Minh City.
+Hi! I'm **Luu Thanh Danh**, a third-year BSc Data Science student at VNUHCM - University of Science (HCMUS) in Ho Chi Minh City.
 
 ## What I Build
 

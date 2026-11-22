@@ -199,7 +199,7 @@ export default function HeroSection() {
                 <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
                   <span className="inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-slate-950/70 px-3 py-1 font-mono text-[11px] text-cyan-300 backdrop-blur-md">
                     <span className="h-2 w-2 animate-ping rounded-full bg-cyan-400" />
-                    HCMUS · Data Science
+                    HCMUS · Data Science (Year 3)
                   </span>
                   <span className="flex h-7 w-7 items-center justify-center rounded-full border border-white/20 bg-slate-950/70 text-cyan-400 backdrop-blur-md">
                     <Sparkles size={13} />
@@ -215,7 +215,7 @@ export default function HeroSection() {
                     Luu Thanh Danh
                   </h3>
                   <div className="mt-2 flex items-center justify-between border-t border-white/10 pt-2 text-[11px] font-mono text-gray-400">
-                    <span>2024 – 2028</span>
+                    <span>3rd Year · Exp. 2028</span>
                     <span className="flex items-center gap-1 text-cyan-300">
                       <RotateCcw size={10} className="animate-spin" style={{ animationDuration: '6s' }} /> Click or drag to flip
                     </span>
