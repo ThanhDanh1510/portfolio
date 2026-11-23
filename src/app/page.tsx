@@ -5,6 +5,7 @@ import ProjectsSection from "@/components/sections/ProjectsSection";
 import AITerminal from "@/components/AITerminal";
 import PublicationsSection from "@/components/sections/PublicationsSection";
 import AchievementsSection from "@/components/sections/AchievementsSection";
+import TributesSection from "@/components/sections/TributesSection";
 import ContactSection from "@/components/sections/ContactSection";
 
 export default function Home() {
@@ -23,6 +24,8 @@ export default function Home() {
       <PublicationsSection />
       <div className="section-beam" />
       <AchievementsSection />
+      <div className="section-beam" />
+      <TributesSection />
       <div className="section-beam" />
       <ContactSection />
 

@@ -14,6 +14,7 @@ const navLinks = [
   { href: "#projects", label: "Projects", id: "projects" },
   { href: "#terminal", label: "Terminal", id: "terminal" },
   { href: "#publications", label: "Publications", id: "publications" },
+  { href: "#tributes", label: "Tributes", id: "tributes" },
   { href: "#contact", label: "Contact", id: "contact" },
   { href: "/blog", label: "Blog", id: "blog" },
 ];
@@ -46,7 +47,7 @@ export default function Navbar() {
     window.addEventListener("scroll", onScroll);
 
     // Scrollspy Intersection Observer on Home Page
-    const sectionIds = ["about", "skills", "projects", "terminal", "publications", "achievements", "contact"];
+    const sectionIds = ["about", "skills", "projects", "terminal", "publications", "achievements", "tributes", "contact"];
     const observers: IntersectionObserver[] = [];
 
     if (isHome) {

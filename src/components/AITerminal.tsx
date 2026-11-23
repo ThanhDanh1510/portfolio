@@ -39,7 +39,7 @@ const QUICK_COMMANDS = [
   { label: "cat skills", cmd: "cat skills", desc: "Display Tech Stack Matrix" },
   { label: "projects", cmd: "projects", desc: "List Featured Production Systems" },
   { label: "publications", cmd: "publications", desc: "View Springer & ECCV Papers" },
-  { label: "ls", cmd: "ls", desc: "List virtual filesystem" },
+  { label: "wishes", cmd: "wishes", desc: "View Birthday Tributes & Guestbook" },
   { label: "help", cmd: "help", desc: "List all terminal commands" },
   { label: "clear", cmd: "clear", desc: "Clear terminal screen" },
 ];
@@ -104,6 +104,10 @@ export default function AITerminal() {
               <div>
                 <span className="text-emerald-400 font-bold">publications</span>
                 <span className="text-slate-400"> - Springer &amp; ECCV paper records</span>
+              </div>
+              <div>
+                <span className="text-emerald-400 font-bold">wishes</span>
+                <span className="text-slate-400"> - Birthday guestbook &amp; tributes</span>
               </div>
               <div>
                 <span className="text-emerald-400 font-bold">ls</span>
@@ -450,6 +454,49 @@ export default function AITerminal() {
         outputNode = (
           <div className="text-xs font-mono text-rose-400">
             [sudo] Permission denied: You do not have root clearance to wipe Luu Thanh Danh&apos;s AI cluster! 😉
+          </div>
+        );
+        break;
+
+      case "wishes":
+      case "tributes":
+      case "guestbook":
+      case "thanks":
+        outputNode = (
+          <div className="space-y-2 text-xs font-mono text-slate-300">
+            <p className="text-rose-400 font-bold">{"// Tributes & Wishes from Birthday Server (Lv 20):"}</p>
+            <p className="text-slate-400 italic">
+              &quot;Cảm ơn tất cả anh em, bạn bè và đồng đội đã gửi những lời chúc ấm áp nhất nhân dịp sinh nhật tuổi 20!&quot;
+            </p>
+            <div className="space-y-1.5 pt-1">
+              <div className="rounded border border-rose-500/30 bg-rose-950/20 p-2">
+                <span className="text-rose-300 font-bold">[kho]:</span>
+                <span className="text-slate-200"> &quot;Keep going and grinding bro, i believe in you&quot;</span>
+              </div>
+              <div className="rounded border border-cyan-500/30 bg-cyan-950/20 p-2">
+                <span className="text-cyan-300 font-bold">[cunis]:</span>
+                <span className="text-slate-200"> &quot;chúc anh Danh luôn vui vẻ, hạnh phúc, 8386, mãi đẹp trai và bá khí nhó 🥳🎂&quot;</span>
+              </div>
+              <div className="rounded border border-emerald-500/30 bg-emerald-950/20 p-2">
+                <span className="text-emerald-300 font-bold">[Thành Quốc]:</span>
+                <span className="text-slate-200"> &quot;chúc bạn Thành Danh tui tuổi 20 thành danh nha 🥳&quot;</span>
+              </div>
+            </div>
+            <p className="text-[11px] text-slate-400 pt-1">
+              Xem toàn bộ lời chúc tại section{" "}
+              <a href="#tributes" className="text-rose-400 underline">
+                #tributes
+              </a>{" "}
+              hoặc{" "}
+              <a
+                href="https://lolizabrett-byte.github.io/happy-birthday-danh/"
+                target="_blank"
+                rel="noreferrer"
+                className="text-cyan-400 underline"
+              >
+                Birthday Server Website ↗
+              </a>
+            </p>
           </div>
         );
         break;

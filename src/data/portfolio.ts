@@ -213,3 +213,117 @@ export const achievements = [
       "Mentored high school student qualifying for the Vietnam National Team selection round for the International AI Olympiad (IAIO).",
   },
 ];
+
+export type TributeWish = {
+  id: string;
+  name: string;
+  message: string;
+  date: string;
+  tag?: string;
+  highlight?: boolean;
+  color?: string;
+};
+
+export const birthdayServerUrl = "https://lolizabrett-byte.github.io/happy-birthday-danh/";
+
+export const featuredLetter = {
+  author: "kho",
+  role: "Best Friend & Roblox Duo",
+  serverMeta: "SaveAsDanh · Lv 20 Unlocked · 15/10/2026",
+  lines: [
+    "Danh ơi! Chúc mừng sinh nhật tuổi 20 nha ông bạn đại học kiêm đồng đội Roblox số 1 của tui 🎂",
+    "Cảm ơn ông vì bao nhiêu trận Steal An Egg cướp trứng tới khuya, bao nhiêu lần cày Blox Fruits chung sau giờ học. Mấy lúc đó vui thiệt sự.",
+    "Chúc Danh có một bữa tiệc sinh nhật thật hạnh phúc và ấm áp, bên cạnh gia đình và những người thương Danh nhất.",
+    "Tuổi 20 rồi, chúc ông level up không chỉ trong game mà cả ngoài đời: mỗi ngày phát triển bản thân thêm một chút, học hành suôn sẻ, ngày càng vững vàng.",
+    "Chúc Danh luôn giữ lửa đam mê, theo đuổi tới cùng và hoàn thành mọi ước mơ, nguyện vọng của mình. Kiên trì như cách ông roll ra trái Mythical vậy đó 😆",
+    "Sau này có bận cỡ nào thì cũng nhớ chừa một slot trong server cho tui vào chơi chung nha! Happy Birthday, SaveAsDanh! GG WP tuổi 19, welcome tuổi 20 🥳",
+  ],
+};
+
+export const tributeWishes: TributeWish[] = [
+  {
+    id: "wish-kho-live",
+    name: "Kho",
+    message: "Keep going and grinding bro, i believe in you",
+    date: "15/10/2026",
+    tag: "Đồng đội",
+    highlight: true,
+    color: "#06b6d4",
+  },
+  {
+    id: "wish-cunis",
+    name: "cunis",
+    message:
+      "hiii nam thần, hôm nay anh lại thêm tuổi mới rồi, em chúc anh Danh luôn vui vẻ, hạnh phúc, luôn thoải mái đón nhận chuyện vui chuyện buồn trong cuộc sống, em nghĩ là anh sẽ luôn enjoy cuộc sống vì em thấy anh rất là tích cực lun, chúc anh 8386, mãi đẹp trai và bá khí nhó🥳😘🎂",
+    date: "15/10/2026",
+    tag: "Friend",
+    highlight: true,
+    color: "#f43f5e",
+  },
+  {
+    id: "wish-quoc",
+    name: "Nguyễn An Thành Quốc",
+    message: "chúc bạn Thành Danh tui tuổi 20 thành danh nha🥳",
+    date: "15/10/2026",
+    tag: "HCMUS Friend",
+    color: "#10b981",
+  },
+  {
+    id: "wish-hoang6mui",
+    name: "hoangdeptrai6mui",
+    message:
+      "happy 20th birthday Danh! Chúc ông tuổi mới luôn tỏa sáng và đạt được mọi dự định!!!!!!!!!!!😘🥰😍😝🤗🤑😳😚",
+    date: "15/10/2026",
+    tag: "Friend",
+    color: "#a855f7",
+  },
+  {
+    id: "wish-hpann",
+    name: "HPann",
+    message: "Cmsn danh nha 🎂🎂🎂 Mãi iu Ai bít sẽ bít ☝️😎",
+    date: "15/10/2026",
+    tag: "Friend",
+    color: "#f59e0b",
+  },
+  {
+    id: "wish-schema",
+    name: "God (Schema)",
+    message: "Chúc Danh AI unslop",
+    date: "15/10/2026",
+    tag: "AI Peer",
+    color: "#3b82f6",
+  },
+  {
+    id: "wish-cat",
+    name: "🐱",
+    message: "Chúc ông snvv💥💥🎉",
+    date: "16/10/2026",
+    tag: "Friend",
+    color: "#ec4899",
+  },
+  {
+    id: "wish-aibiet",
+    name: "ai biết",
+    message: "e trai snvv 🐶🐶🐷",
+    date: "15/10/2026",
+    tag: "Friend",
+    color: "#14b8a6",
+  },
+  {
+    id: "wish-hoang",
+    name: "hoang",
+    message: "cmsn",
+    date: "15/10/2026",
+    tag: "Friend",
+    color: "#8b5cf6",
+  },
+  {
+    id: "wish-dealer",
+    name: "Blox Fruit Dealer",
+    message:
+      "Hôm nay sinh nhật nên shop tặng Danh một trái Mythical miễn phí. Chúc tuổi mới roll đâu trúng đó! 🍎",
+    date: "15/10/2026",
+    tag: "Server Buff",
+    color: "#ef4444",
+  },
+];
