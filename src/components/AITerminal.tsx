@@ -474,7 +474,7 @@ export default function AITerminal() {
                 <span className="text-slate-200"> &quot;Keep going and grinding bro, i believe in you&quot;</span>
               </div>
               <div className="rounded border border-cyan-500/30 bg-cyan-950/20 p-2">
-                <span className="text-cyan-300 font-bold">[cunis]:</span>
+                <span className="text-cyan-300 font-bold">[cunis (Sister)]:</span>
                 <span className="text-slate-200"> &quot;chúc anh Danh luôn vui vẻ, hạnh phúc, 8386, mãi đẹp trai và bá khí nhó 🥳🎂&quot;</span>
               </div>
               <div className="rounded border border-emerald-500/30 bg-emerald-950/20 p-2">

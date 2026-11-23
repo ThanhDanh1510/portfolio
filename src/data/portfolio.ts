@@ -256,7 +256,7 @@ export const tributeWishes: TributeWish[] = [
     message:
       "hiii nam thần, hôm nay anh lại thêm tuổi mới rồi, em chúc anh Danh luôn vui vẻ, hạnh phúc, luôn thoải mái đón nhận chuyện vui chuyện buồn trong cuộc sống, em nghĩ là anh sẽ luôn enjoy cuộc sống vì em thấy anh rất là tích cực lun, chúc anh 8386, mãi đẹp trai và bá khí nhó🥳😘🎂",
     date: "15/10/2026",
-    tag: "Friend",
+    tag: "Close Sister",
     highlight: true,
     color: "#f43f5e",
   },
